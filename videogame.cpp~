@@ -1,0 +1,16 @@
+#include "videogame.h"
+#include <iostream>
+
+using namespace std;
+
+VideoGame::VideoGame(const string& title, int year, const string& publisher, int rating)
+    : Media(title, year), publisher(publisher), rating(rating) {}
+
+void VideoGame::print() const {
+    cout << "Video Game - Title: " << title << ", Year: " << year 
+         << ", Publisher: " << publisher << ", Rating: " << rating << endl;
+}
+
+int VideoGame::getRating() const {
+    return rating;
+}

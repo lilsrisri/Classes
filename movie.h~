@@ -1,0 +1,20 @@
+#ifndef MOVIE_H
+#define MOVIE_H
+
+#include "media.h"
+#include <string>
+
+using namespace std;
+
+class Movie : public Media {
+private:
+    string director;
+    int duration;
+    int rating;
+public:
+    Movie(const string& title, const string& director, int year, int duration, int rating);
+    void print() const override;
+    int getDuration() const;
+};
+
+#endif
