@@ -4,12 +4,15 @@
 using namespace std;
 
 //constructor
-VideoGame::VideoGame(const string& title, int year, const string& publisher, int rating)
-    : Media(title, year), publisher(publisher), rating(rating) {}
+VideoGame::VideoGame(const char* title, int year, const char* publisherInput, int rating)
+    : Media(title, year), rating(rating) {
+    strncpy(publisher, publisherInput, sizeof(publisher) - 1);
+    publisher[sizeof(publisher) - 1] = '\0';
+}
 
 //print details of the video game
 void VideoGame::print() const {
-    cout << "Video Game - Title: " << title << ", Year: " << year 
+    cout << "Video Game - Title: " << title << ", Year: " << year
          << ", Publisher: " << publisher << ", Rating: " << rating << endl;
 }
 

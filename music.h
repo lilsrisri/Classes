@@ -1,23 +1,21 @@
-#ifndef MUSIC_H //header guard
+#ifndef MUSIC_H
 #define MUSIC_H
 
 #include "media.h"
-#include <string>
+#include <cstring>
 
 using namespace std;
-
 
 //class for music, from Media
 class Music : public Media {
 private:
-    string artist;
+    char artist[100];
     int duration;
-    string publisher;
+    char publisher[100];
 public:
-  //constructor
-    Music(const string& title, const string& artist, int year, int duration, const string& publisher);
-  void print() const override; //print details
-  int getDuration() const; //get duration
+    Music(const char* title, const char* artist, int year, int duration, const char* publisher); //constructor
+    void print() const override; //print details
+    int getDuration() const; //get duration
 };
 
 #endif

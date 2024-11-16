@@ -2,20 +2,19 @@
 #define VIDEOGAME_H
 
 #include "media.h"
-#include <string>
+#include <cstring>
 
 using namespace std;
 
 //class for video games, derived from media
 class VideoGame : public Media {
 private:
-    string publisher;
+    char publisher[100];
     int rating;
 public:
-  //constructor
-    VideoGame(const string& title, int year, const string& publisher, int rating);
-  void print() const override; //print details
-  int getRating() const; //getter for rating
+    VideoGame(const char* title, int year, const char* publisher, int rating); //constructor
+    void print() const override; //print details
+    int getRating() const; //getter for rating
 };
 
 #endif

@@ -4,16 +4,18 @@
 using namespace std;
 
 //implementing the constructor
-Media::Media(const string& title, int year) : title(title), year(year) {}
+Media::Media(const char* titleInput, int yearInput) : year(yearInput) {
+    strncpy(title, titleInput, sizeof(title) - 1);
+    title[sizeof(title) - 1] = '\0';
+}
 
 //virtual destructor
 Media::~Media() {}
 
 //returns the title
-string Media::getTitle() const {
+const char* Media::getTitle() const {
     return title;
 }
-
 
 //returns the year
 int Media::getYear() const {
